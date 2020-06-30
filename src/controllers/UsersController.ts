@@ -5,7 +5,7 @@ import User from '../models/User'
 class UserController {
   async store(req: Request, res: Response) {
     const repository = getRepository(User)
-    const {email, password } = req.body
+    const { email, password } = req.body
 
     const userExists = await repository.findOne({ where: { email } })
 
